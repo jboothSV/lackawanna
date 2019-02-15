@@ -1,0 +1,185 @@
+.vguide {
+    padding: 60px 10px 180px;
+}
+
+.vguide .container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.vguide .container h2 {
+    margin: 0 0 20px;
+}
+
+.vguide .container h2 .title1 {
+    display: block;
+    font-family:'Avenir LT W01_35 Light1475496';
+    color: white;
+    text-transform: uppercase;
+    font-size: 56px;
+    line-height: 56px;
+}
+
+.vguide .container h2 .title2 {
+    display: block;
+    font-family:'Avenir LT W01_95 Black1475556';
+    color: white;
+    text-transform: uppercase;
+    font-size: 60px;
+    line-height: 50px;
+}
+
+.vguide .vguide-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 400px;
+    padding: 25px;
+    border: 2px solid white;
+    margin: 0 auto 25px;
+    z-index: 1;
+}
+
+.vguide .vguide-item a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family:'Avenir LT W01_35 Light1475496';
+    text-align: left;
+    font-size: 21px;
+    line-height: 22px;
+    color: white;
+    text-transform: uppercase;
+}
+
+.vguide .vguide-item::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.65);
+    z-index: -1;
+}
+
+.vguide .vguide-item i {
+    font-size: 40px;
+    margin-left: 15px;
+    color: white;
+}
+
+@media (min-width: 641px) {
+    .vguide {
+        padding: 100px 15px;
+    }
+    .vguide .container {
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: right;
+    }
+    .vguide .container h2 {
+        margin: 0 20px 0 0;
+    }
+    .vguide .container h2 .title1 {
+        font-size: 76px;
+        line-height: 72px;
+    }
+    .vguide .container h2 .title2 {
+        font-size: 80px;
+        line-height: 76px;
+    }
+}
+
+@media (min-width: 1025px) {
+    .vguide {
+        padding: 180px 15px 280px;
+    }
+    .vguide .container h2 {
+        margin: 0 50px 0 0;
+    }
+    .vguide .container h2 .title1 {
+        font-size: calc(76px + (180 - 76) * ((100vw - 1025px) / (1700 - 1025)));
+        line-height: calc(72px + (160 - 72) * ((100vw - 1025px) / (1700 - 1025)));
+    }
+    .vguide .container h2 .title2 {
+        font-size: calc(80px + (190 - 80) * ((100vw - 1025px) / (1700 - 1025)));
+        line-height: calc(76px + (175 - 76) * ((100vw - 1025px) / (1700 - 1025)));
+    }
+    .vguide .items {
+        width: 27%;
+        min-width: 400px;
+    }
+    .vguide .vguide-item {
+        padding: 35px;
+        max-width: none;
+    }
+    .vguide .vguide-item a {
+        font-size: 31px;
+        line-height: 34px;
+    }
+    .vguide .vguide-item i {
+        font-size: 50px;
+        margin-left: 20px;
+    }
+}
+
+.enews {
+    display: flex;
+    justify-content: center;
+    padding: 20px 15px;
+    position: relative;
+    background-color: rgba(255,255,255,0.7);
+}
+
+.enews a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 475px;
+    padding: 25px;
+    font-family:'Avenir LT W01_95 Black1475556';
+    font-size: 16px;
+    color: white;
+    line-height: 17px;
+    text-transform: uppercase;
+    border-radius: 6px;
+    background-color: black;
+}
+
+.enews a i {
+    font-size: 44px;
+    margin-right: 7px;
+    margin-left: 20px;
+}
+
+@media (min-width: 641px) {
+    .enews a {
+        padding: 8px 25px;
+        font-size: 20px;
+        line-height: 18px;
+    }
+    .enews a i {
+        font-size: 36px;
+        margin-left: 0;
+        margin-right: 20px;
+    }
+}
+
+@media (min-width: 1025px) {
+    .enews {
+        background: linear-gradient(to left, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.85) 50%, rgba(255,255,255,0.55) 100%);
+        overflow: hidden;
+    }
+    @supports (background: radial-gradient(ellipse at top right, rgba(255,255,255, 1), rgba(255,255,255, 0.0) 140%)) {
+        .enews {
+            background: -webkit-radial-gradient(ellipse at top right, rgba(255,255,255, 1), rgba(255,255,255, 0.0) 140%);
+            background: radial-gradient(ellipse at top right, rgba(255,255,255, 1), rgba(255,255,255, 0.0) 140%);
+        }
+    }
+}

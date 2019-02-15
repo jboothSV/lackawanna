@@ -1,0 +1,185 @@
+
+/*
+|-----------------------------------------------------------------------------------------------------------
+| Main Nav Widget 
+|-----------------------------------------------------------------------------------------------------------
+*/
+
+.nav-primary {
+    display: flex;
+    align-items: center;
+}
+
+.nav-primary .item-inner,
+.nav-industry .item-inner {
+    position: relative;
+}
+
+/*
+|-----------------------------------------------------------------------------------------------------------
+| Interior Nav Widget 
+|-----------------------------------------------------------------------------------------------------------
+*/
+
+
+
+/*
+|-----------------------------------------------------------------------------------------------------------
+| Footer Nav Widget 
+|-----------------------------------------------------------------------------------------------------------
+*/
+
+.footer-nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.footer-nav a {
+    font-family:'Avenir LT W01_95 Black1475556';
+    font-size: 20px;
+    text-shadow: 0px 0px;
+    color: #333333;
+    text-transform: uppercase;
+}
+
+.footer .footer-nav-item {
+    margin-bottom: 25px;
+}
+
+@media (min-width: 1025px) {
+    .footer .footer-nav {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .footer .footer-nav-item {
+        margin-right: calc(10px + (30 - 10) * ((100vw - 1025px) / (1700 - 1025)));
+        margin-bottom: 0;
+    }
+    .footer .footer-nav .footer-nav-item:last-child {
+        margin-right: 0;
+    }
+    .footer .footer-nav a {
+        font-size: calc(20px + (24 - 20) * ((100vw - 1025px) / (1700 - 1025)));
+    }
+}
+
+/*
+|-----------------------------------------------------------------------------------------------------------
+| Mobile Nav 
+|-----------------------------------------------------------------------------------------------------------
+*/
+
+.mobilenav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    pointer-events: none;
+}
+
+.mobilenav .toggle {
+    position: absolute;
+    top: 0;
+    right: 20px;
+    height: 65px;
+    width: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    pointer-events: all;
+}
+
+.mobilenav .mobile-dd {
+    display: none;
+    position: absolute;
+    top: 65px;
+    right: 0;
+    width: 100%;
+    pointer-events: none;
+    z-index: 1000;
+    background-color: black;
+}
+
+.mobilenav.active .mobile-dd {
+    display: block;
+    pointer-events: all;
+}
+
+.mobilenav ul {
+    margin: 0;
+    list-style: none;
+}
+
+.mobilenav .nav-list ul {
+    display: none;
+}
+
+.mobilenav .nav-list li.has-submenu.active > ul {
+    display: block;
+}
+
+.mobilenav .nav-list li.has-submenu.active > .item-inner {
+    background-color: #71a84f;
+}
+
+.mobilenav .nav-list li.has-submenu.active > .item-inner .toggle-menu {
+    transform: rotate(180deg);
+}
+
+.mobilenav .item-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 17px 15px;
+    border-bottom: 1px solid white;
+}
+
+.mobilenav .nav-list ul .item-inner {
+    border: 0;
+}
+
+.mobilenav .nav-list > li:first-child > .item-inner {
+    border-top: 1px solid white;
+}
+
+.mobilenav .nav-list ul li:last-child .item-inner {
+    border-bottom: 1px solid white;
+}
+
+.mobilenav .nav-list a,
+.mobilenav .nav-list .toggle-menu {
+    text-shadow: 0px 0px;
+}
+
+.mobilenav .nav-list .item-inner a {
+    font-family:'Avenir LT W01_65 Medium1475532';
+    font-size: 17px;
+    text-transform: uppercase;
+    line-height: 18px;
+    color: white;
+}
+
+.mobilenav .nav-list .item-inner i {
+    font-size: 20px;
+}
+
+.mobilenav .nav-list ul .item-inner a {
+    font-family:'Avenir LT W01_35 Light1475496';
+    font-size: 17px;
+    text-transform: none;
+    color: #c68c36;
+}
+
+.mobilenav .nav-list.industry .item-inner {
+    background-color: #404040;
+}
+
+@media (min-width: 1025px) {
+    .mobilenav {
+        display: none;
+    }
+}
+
