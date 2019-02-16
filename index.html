@@ -40,13 +40,40 @@
     <section class="header-slideshow">
         <div class="home-header">
             <div class="item">
-                <img src="includes/public/assets/images/header-slideshow1.jpg" />
+                <div class="img-cont">
+                    <picture>
+                        <source srcset="includes/public/assets/images/home-slide1.png" media="(min-width: 641px)">
+                        <img src="includes/public/assets/images/home-slide-sm.png" alt="">
+                    </picture>
+                </div>
+                <div class="slide-content">
+                    <h2>where city meets country</h2>
+                    <p class="desc">Lackawanna County, PA, is a four seasons destination with endless activities!</p>
+                </div>
             </div>
             <div class="item">
-                <img src="includes/public/assets/images/header-slideshow2.jpg" />
+                <div class="img-cont">
+                    <picture>
+                        <source srcset="includes/public/assets/images/home-slide1.png" media="(min-width: 641px)">
+                        <img src="includes/public/assets/images/home-slide-sm.png" alt="">
+                    </picture>
+                </div>
+                <div class="slide-content">
+                    <h2>slide number two</h2>
+                    <p class="desc">Lackawanna County, PA, is a four seasons destination with endless activities!</p>
+                </div>
             </div>
             <div class="item">
-                <img src="includes/public/assets/images/header-slideshow3.jpg" />
+                <div class="img-cont">
+                    <picture>
+                        <source srcset="includes/public/assets/images/home-slide1.png" media="(min-width: 641px)">
+                        <img src="includes/public/assets/images/home-slide-sm.png" alt="">
+                    </picture>
+                </div>
+                <div class="slide-content">
+                    <h2>slide number three</h2>
+                    <p class="desc">Lackawanna County, PA, is a four seasons destination with endless activities!</p>
+                </div>
             </div>
         </div>      
     </section>
@@ -56,11 +83,19 @@
             $('.home-header').slick({
                 infinite: true,
                 arrows: true,
-                dots: true,
-                autoplay: true,
+                dots: false,
                 fade: true,
-                prevArrow: '<div class="arrow-cont"><div type="button" data-role="none" class="slick-prev" aria-label="previous"><img src="includes/public/assets/images/arrow-prev.png"/></div></div>',
-                nextArrow: '<div class="arrow-cont"><div type="button" data-role="none" class="slick-next" aria-label="next"><img src="includes/public/assets/images/arrow-next.png"/></div></div>'
+                speed: 1100,
+                prevArrow: '<div class="custom-arrow prev"><div type="button" data-role="none" class="slick-prev" aria-label="previous"><img src="includes/public/assets/images/home-slider-arrow.png" alt="arrow"></div></div>',
+                nextArrow: '<div class="custom-arrow next"><div type="button" data-role="none" class="slick-next" aria-label="next"><img src="includes/public/assets/images/home-slider-arrow.png" alt="arrow"></div></div>',
+                responsive: [
+                    {
+                        breakpoint: 1024,
+                        settings: {
+                            dots: true
+                        }
+                    }
+                ]
             });
 
             $(window).on('resize orientationchange', function() {
@@ -72,35 +107,19 @@
 
     <!-- //////  BODY  //////// -->
     <section class="content">
-        <h1>This is an example of some text that is surrounded by an H1 tag.</h1>
-
-        <p>Search engines look for H1s to determine a page&#39;s title and use that in the weighting of the page in their rankings. Consequently, you never want to actually use the H1 in the content of a page because we automatically generate the H1 from the Page Name and Google would ding you for trying to game their algorithm if you had more than one on a page.</p>
-
-        <h2>This is an example of an H2</h2>
-
-        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu</p>
-
-        <h3>This is an example of an H3</h3>
-
-        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu</p>
-
-        <h4>This is an example of an H4</h4>
-
-        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu</p>
-
-        <h5>This is an example of an H5</h5>
-
-        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu</p>
-
-        <h6>This is an example of an H6</h6>
-
-        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu</p>
-
-        <p>This is what a bunch of text looks like without the &quot;p tag&quot;. If you were to look at the HTML version of this page, you would notice that this grouping of text does not have any sort of tag (denoted by &lt;&gt; preceding it and following it to close the tag). That is why this text is pretty generic and lacking any style. Chances are that the leading between the lines is a lot closer than the ideal as well.</p>
-
-        <p>This, on the other hand is what text looks like when it is surrounded by &quot;p tags&quot;. In case it is not apparent at this point, &quot;p&quot; stands for paragraph. It is the p tags that alert the CMS to the fact that this text needs to have certain styling applied to it. That is why this text probably looks a good deal different than the paragraph above. If you were to look at this text in the HTML, you would see a</p>
-
-        <p>just before the first word to open the tag and a just after this sentence to close it.</p>
+        <div class="two-col-highlight">
+            <div class="left-col">
+                <div class="text-container">
+                    <h2>Welcome To Lackawanna County</h2>
+                    <p>
+                        Whether you’re looking to find a relaxing escape from it all or check off some items on your bucket list, Lackawanna County offers something for everyone. Know for our historic sites, sports, outdoor adventures, and art & culture—with so much to do, plan to spend the weekend and see how rewarding life can be where City Meets Country. Lackwanna County is truly the best of both worlds!  
+                    </p>
+                </div>
+            </div>
+            <div class="right-col">
+                <div class="image-box" style="background:url('includes/public/assets/images/two-col-highlight.png')center/cover no-repeat;"></div>
+            </div>
+        </div>
     </section>
     
 
@@ -122,5 +141,12 @@
 	
 </script>
 
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("body").on("click", "[data-toggle-primarysearch]", function(){
+            $(this).parent().toggleClass("active");
+        });
+    });
+</script>
 </body>
 </html>

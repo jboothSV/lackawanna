@@ -6,13 +6,259 @@
 */
 
 .nav-primary {
-    display: flex;
+    display: none;
     align-items: center;
+}
+
+@media (min-width: 1025px) {
+    .nav-primary {
+        display: flex;
+    }
 }
 
 .nav-primary .item-inner,
 .nav-industry .item-inner {
     position: relative;
+}
+
+.nav-primary .primary-item > .item-inner {
+    padding: 37px 0;
+}
+
+.nav-primary .primary-item {
+    position: relative;
+    margin-right: 40px;
+}
+
+.nav-primary .primary-item:last-child {
+    margin-right: 0;
+}
+
+.nav-primary .primary-item a {
+    font-family:'Avenir LT W01_65 Medium1475532';
+    color: white;
+    font-size: calc(20px + (28 - 20) * ((100vw - 1025px) / (1700 - 1025)));
+    text-transform: uppercase;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+
+.nav-primary .primary-item .nav-marker,
+.nav-industry .ind-item .nav-marker {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    width: 55px;
+    transition: opacity 0.2s;
+    opacity: 0;
+}
+
+.nav-primary .primary-item.has-dropdown:hover .nav-marker,
+.nav-industry .ind-item.has-dropdown:hover .nav-marker {
+    opacity: 1;
+}
+
+.nav-primary .primary-item .nav-marker img,
+.nav-industry .ind-item .nav-marker img {
+    display: block;
+    width: 100%;
+}
+
+.nav-primary .primary-item ul {
+    margin: 0;
+    list-style: none;
+}
+
+.nav-primary .primary-item .nav-list ul {
+    display: none;
+}
+
+.nav-primary .primary-item .nav-list li.has-submenu.active ul {
+    display: block;
+}
+
+.nav-primary .primary-item .nav-list,
+.nav-industry .ind-item .nav-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    min-width: 480px;
+    transition: opacity 0.2s;
+    background-color: rgba(0,0,0,0.75);
+    z-index: 1000;
+    transition: opacity 0.2s;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.nav-primary .primary-item.has-dropdown:hover .nav-list,
+.nav-industry .ind-item.has-dropdown:hover .nav-list {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.nav-primary .primary-item:first-child .nav-list {
+    transform: translateX(-10%);
+}
+
+.nav-primary .primary-item:nth-child(2) .nav-list {
+    transform: translateX(-20%);
+}
+
+.nav-primary .primary-item:nth-child(3) .nav-list {
+    transform: translateX(-40%);
+}
+
+.nav-primary .primary-item:nth-child(4) .nav-list {
+    transform: translateX(-50%);
+}
+
+.nav-primary .primary-item:last-child .nav-list,
+.nav-industry .ind-item:last-child .nav-list {
+    left: auto;
+    right: 0;
+}
+
+.nav-primary .primary-item .nav-list .item-inner,
+.nav-industry .ind-item .nav-list .item-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 20px;
+}
+
+.nav-primary .primary-item .nav-list > li > .item-inner,
+.nav-industry .ind-item .nav-list > li > .item-inner {
+    border-bottom: 1px solid white;
+}
+
+.nav-primary .primary-item .nav-list > li:last-child > .item-inner,
+.nav-industry .ind-item .nav-list > li:last-child > .item-inner {
+    border-bottom: 0;
+}
+
+.nav-primary .primary-item .nav-list > li.has-submenu.active ul li:last-child > .item-inner,
+.nav-industry .ind-item .nav-list > li.has-submenu.active ul li:last-child > .item-inner {
+    border-bottom: 1px solid white;
+}
+
+.nav-primary .primary-item .nav-list > li:hover > .item-inner,
+.nav-industry .ind-item .nav-list > li:hover > .item-inner {
+    background-color: #666666
+}
+
+.nav-primary .primary-item .nav-list a,
+.nav-industry .ind-item .nav-list a {
+    font-family:'Avenir LT W01_65 Medium1475532';
+    font-size: 20px;
+    text-transform: uppercase;
+    color: white;
+}
+
+.nav-primary .primary-item .nav-list ul a,
+.nav-industry .ind-item .nav-list ul a {
+    font-family:'Avenir LT W01_35 Light1475496';
+    font-size: 20px;
+    text-transform: none;
+    color: #c68c36;
+}
+
+.nav-primary .primary-item .nav-list i,
+.nav-industry .ind-item .nav-list i {
+    font-size: 24px;
+    cursor: pointer;
+    text-shadow: 0px 0px;
+}
+
+.nav-primary .primary-item .nav-list li.has-submenu.active i,
+.nav-industry .ind-item .nav-list li.has-submenu.active i {
+    transform: rotate(180deg);
+}
+
+.nav-primary .primary-item .nav-list li.has-submenu.active > .item-inner,
+.nav-industry .ind-item .nav-list li.has-submenu.active > .item-inner {
+    background-color: #71a84f;
+}
+
+.nav-primary > .primary-item:hover > .item-inner > .dropdown-support {
+    position: absolute;
+    bottom: 0;
+    left: -100%;
+    width: 300%;
+    height: 30px;
+    transition: transform 2s;
+    z-index: 2;
+    transform: scaleY(0);
+    transform-origin: center bottom;
+    pointer-events: all;
+}
+.nav-primary .primary-item > .item-inner > a:hover + .dropdown-support {
+    transition: none;
+    transform: scaleY(1);
+    pointer-events: all;
+}
+
+.nav-industry .ind-item:hover > .item-inner > .dropdown-support {
+    position: absolute;
+    top: calc(100% - 20px);
+    left: -100%;
+    width: 300%;
+    height: 28px;
+    transition: transform 2s;
+    z-index: 2;
+    transform: scaleY(0);
+    transform-origin: center bottom;
+}
+
+.nav-industry .ind-item > .item-inner > a:hover + .dropdown-support {
+    transition: none;
+    transform: scaleY(1);
+}
+
+.nav-industry {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 35px;
+}
+
+.nav-industry .ind-item {
+    position: relative;
+    margin-right: 25px;
+}
+
+.nav-industry .ind-item:last-child {
+    margin-right: 0;
+}
+
+.nav-industry .ind-item > .item-inner {
+    position: relative;
+    padding: 20px 0;
+}
+
+.nav-industry .ind-item a {
+    font-family:'Avenir LT W01_95 Black1475556';
+    font-size: 21px;
+    color: #999999;
+    text-transform: uppercase;
+}
+
+.nav-industry .ind-item ul {
+    margin: 0;
+    list-style: none;
+}
+
+.nav-industry .ind-item .nav-list ul {
+    display: none;
+}
+
+.nav-industry .ind-item .nav-list li.has-submenu.active ul {
+    display: block;
+}
+
+.nav-industry .ind-item .nav-list {
+    min-width: 340px;
 }
 
 /*
