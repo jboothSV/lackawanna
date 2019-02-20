@@ -1,6 +1,7 @@
 .two-col-highlight {
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 }
 
 .two-col-highlight .text-col,
@@ -234,7 +235,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    padding: 103% 15px 0;
+    padding: 118% 15px 0;
     pointer-events: none;
     display: flex;
     justify-content: space-between;
@@ -286,7 +287,6 @@
 
 .feat-slider .slider {
     z-index: 2;
-    margin-top: -70px;
 }
 
 .feat-slider .item {
@@ -297,6 +297,7 @@
 .feat-slider .item .slide-content {
     position: relative;
     padding: 90px 15px 45px;
+    margin-top: -70px;
     background: -moz-linear-gradient(bottom, rgba(112,112,112,0) 0%, rgba(255,255,255,0.75) 20%, rgba(255,255,255,1.0) 50%, rgba(255,255,255,0.75) 90%, rgba(112,112,112,0) 100%);
     background: -webkit-linear-gradient(bottom, rgba(112,112,112,0) 0%,rgba(255,255,255,0.75) 20%,rgba(255,255,255,1.0) 50%,rgba(255,255,255,0.75) 90%,rgba(112,112,112,0) 100%);
     background: linear-gradient(to bottom, rgba(112,112,112,0) 0%,rgba(255,255,255,0.9) 20%,rgba(255,255,255,1.0) 50%,rgba(255,255,255,0.75) 90%, rgba(112,112,112,0) 100%);
@@ -305,7 +306,7 @@
     z-index: 2;
 }
 
-.feat-slider .item .slide-content::after {
+/* .feat-slider .item .slide-content::after {
     content: "";
     position: absolute;
     bottom: -15px;
@@ -314,7 +315,7 @@
     height: 45px;
     -webkit-mask-image: linear-gradient(to bottom, rgba(112,112,112,1.0) 0%, transparent 100%);
     mask-image: linear-gradient(to bottom, rgba(112,112,112,1.0) 0%, transparent 100%);
-}
+} */
 
 .feat-slider .item .slide-content .title {
     font-family:'Avenir LT W01_95 Black1475556';
@@ -361,7 +362,7 @@
     font-size: 15px;
     line-height: 16px;
     text-align: center;
-    box-shadow: 1px 1px black;
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.68);
 }
 
 .feat-slider .item .slide-content .links a:first-child {
@@ -387,29 +388,30 @@
     transform: translateY(-100%);
 }
 
-.feat-slider .slider .item img {
+.feat-slider .img-slider {
+    z-index: 1;
     display: none;
 }
 
-.feat-slider .img-slider {
+.feat-slider .slider .item .img-cont {
+    position: relative;
+    padding-bottom: 130%;
+    -webkit-mask-image: linear-gradient(to top, transparent 0%, rgba(0, 0, 0, 0.85) 25%);
+    mask-image: linear-gradient(to top, transparent 0%, rgba(0, 0, 0, 0.85) 25%);
     z-index: 1;
 }
 
-.feat-slider .img-slider .item {
-    position: relative;
-    z-index: 1;
-    background: rgb(112, 112, 112);
-    -webkit-mask-image: linear-gradient(to top, transparent 0%, rgba(112,112,112,1.0) 30%);
-    mask-image: linear-gradient(to top, transparent 0%, rgba(112,112,112,1.0) 30%);
-    padding-bottom: 43%;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+@media (min-width: 641px) {
+    .feat-slider .slider .item .img-cont {
+        padding-bottom: 65%;
+    }
 }
 
 @media (min-width: 641px) {
     .feat-slider .item {
+        position: relative;
         flex-direction: row;
+        z-index: 1;
     }
     .feat-slider .item .img-cont,
     .feat-slider .item .slide-content {
@@ -432,5 +434,470 @@
 }
 
 @media (min-width: 1025px) {
-    
+    .feat-slider {
+        display: flex;
+        padding-left: 70px;
+        margin: 0 0 100px;
+    }
+    .feat-slider .img-slider {
+        width: 53%;
+        display: block;
+        order: 2;
+    }
+    .feat-slider .slider {
+        width: 47%;
+        order: 1;
+        display: flex;
+        position: relative;
+    }
+    .feat-slider .slider .slick-track,
+    .feat-slider .img-slider .slick-list,
+    .feat-slider .img-slider .slick-track {
+        height: 100%;
+    }
+    .feat-slider .item .img-cont {
+        display: none;
+    }
+    .feat-slider .item .slide-content {
+        display: flex;
+        width: 100%;
+        padding: 170px 15px; 
+        background: -moz-linear-gradient(top, rgba(226,226,226,0) 0%, rgba(255,255,255,0.75) 20%, rgba(255,255,255,1.0) 50%, rgba(255,255,255,0.75) 70%, rgba(255,255,255,0) 100%);
+        background: -webkit-linear-gradient(top, rgba(226,226,226,0) 0%,rgba(255,255,255,0.75) 20%,rgba(255,255,255,1.0) 50%,rgba(255,255,255,0.75) 70%,rgba(255,255,255,0) 100%);
+        background: linear-gradient(to bottom, rgba(226,226,226,0) 0%,rgba(255,255,255,0.75) 20%,rgba(255,255,255,1.0) 50%,rgba(255,255,255,0.75) 70%,rgba(255,255,255,0) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00e2e2e2', endColorstr='#00ffffff',GradientType=0 );
+        overflow: visible;
+    }
+    .feat-slider .slider::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 0;
+        width: 50px;
+        height: 90%;
+        box-shadow: 50px 0px 96px 0px rgba(0,0,0,0.65);
+        z-index: -1;
+        transform: translateY(-50%);
+    }
+    .feat-slider .slider::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 50px;
+        height: 90%;
+        box-shadow: -50px 0px 96px 0px rgba(0,0,0,0.65);
+        z-index: -1;
+        transform: translateY(-50%);
+    }
+    .feat-slider .item .slide-content .inner {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 650px;
+        margin: 0 auto;
+    }
+    .feat-slider .item .slide-content .title {
+        font-size: 60px;
+        line-height: 50px;
+        font-size: calc(30px + (60 - 30) * ((100vw - 1025px) / (1700 - 1025)));
+        line-height: calc(26px + (50 - 26) * ((100vw - 1025px) / (1700 - 1025)));
+        margin-bottom: 30px;
+    }
+    .feat-slider .item .slide-content .desc {
+        font-size: calc(20px + (26 - 20) * ((100vw - 1025px) / (1700 - 1025)));
+        line-height: calc(30px + (36 - 30) * ((100vw - 1025px) / (1700 - 1025)));
+    }
+    .feat-slider .item .slide-content .details .section {
+        font-size: calc(18px + (28 - 18) * ((100vw - 1025px) / (1700 - 1025)));
+        line-height: calc(20px + (38 - 20) * ((100vw - 1025px) / (1700 - 1025)));
+    }
+    .feat-slider .item .slide-content .links a {
+        max-width: 265px;
+        padding: 30px;
+        font-size: calc(20px + (26 - 20) * ((100vw - 1025px) / (1700 - 1025)));
+    }
+    .feat-slider .item .slide-content .links {
+        margin-top: 25px;
+    }
+    .feat-slider .arrow-cont {
+        width: 100%;
+        max-width: 650px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 60px 15px 0;
+        align-items: flex-start;
+    }
+    .feat-slider .arrow-cont .arrows .custom-arrow {
+        width: 52px;
+        height: 52px;
+    }
+    .feat-slider .arrow-cont .arrows .custom-arrow.prev {
+        margin-right: 35px;
+    }
+    .feat-slider .arrow-cont .arrows .custom-arrow i {
+        font-size: 25px;
+    }
+    .feat-slider .arrow-cont .widget-title h2 {
+        font-size: calc(26px + (46 - 26) * ((100vw - 1025px) / (1700 - 1025)));
+        line-height: calc(30px + (40 - 30) * ((100vw - 1025px) / (1700 - 1025)));
+    }
+    .feat-slider .item .date-cont {
+        display: none;
+    }
+    .feat-slider .img-slider .item {
+        position: relative;
+        z-index: 1;
+        -webkit-mask-image: linear-gradient(to top, transparent 0%, rgba(112,112,112,1.0) 30%);
+        mask-image: linear-gradient(to top, transparent 0%, rgba(112,112,112,1.0) 30%);
+        padding-bottom: 35%;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .feat-slider .img-slider .item h2 {
+        position: absolute;
+        bottom: 25px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        font-size: calc(60px + (180 - 60) * ((100vw - 1025px) / (1700 - 1025)));
+        line-height: calc(56px + (180 - 56) * ((100vw - 1025px) / (1700 - 1025)));
+        text-align: center;
+    }
+}
+
+/* end featured slider */
+
+.carousel {
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto 40px;
+}
+
+.carousel .slider {
+    position: relative;
+}
+
+.carousel .slider .arrow-cont {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    position: absolute;
+    top: 0;
+    left: 15px;
+    width: auto;
+    padding-top: 55%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.carousel .slider .custom-arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: rgb(228,46,65);
+    background: -moz-linear-gradient(top, rgba(228,46,65,1) 0%, rgba(122,25,27,1) 100%);
+    background: -webkit-linear-gradient(top, rgba(228,46,65,1) 0%,rgba(122,25,27,1) 100%);
+    background: linear-gradient(to bottom, rgba(228,46,65,1) 0%,rgba(122,25,27,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e42e41', endColorstr='#7a191b',GradientType=0 );
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+    pointer-events: all;
+    cursor: pointer;
+}
+
+.carousel .slider .custom-arrow.prev {
+    margin-right: 7px;
+}
+
+.carousel .slider .custom-arrow i {
+    font-size: 23px;
+}
+
+.carousel .title-cont {
+    text-align: center;
+}
+
+.carousel .title-cont h2 {
+    color: white;
+    margin: 0;
+}
+
+.carousel .slider .item {
+    position: relative;
+}
+
+.carousel .slider .item .img-cont {
+    border: 2px solid white;
+    padding-bottom: 70%;
+}
+
+.carousel .slider .item .slide-content {
+    background: white;
+}
+
+.carousel .slider .item .slide-content .date-block {
+    padding: 15px 15px 20px;
+    background: linear-gradient(to bottom, #7e7e7e 0%, #afafaf 100%);
+    font-family:'Avenir LT W01_95 Black1475556';
+    font-size: 18px;
+    text-transform: uppercase;
+    color: #cdcdcd;
+}
+
+.carousel .slider .item .slide-content .inner {
+    padding: 30px 15px;
+    text-align: center;
+}
+
+.carousel .slider .item .slide-content h3 {
+    font-family:'Avenir LT W01_95 Black1475556';
+    font-size: 26px;
+    line-height: 28px;
+    text-transform: uppercase;
+    color: #323232;
+    margin: 0 0 25px;
+    text-align: left;
+}
+
+.carousel .slider .item .slide-content .author {
+    font-family:'Avenir LT W01_95 Black1475556';
+    font-size: 18px;
+    line-height: 20px;
+    margin: 0 0 15px;
+    color: #e72f42;
+    text-transform: none;
+    text-align: left;
+}
+
+.carousel .slider .item .slide-content .desc {
+    color: #656565;
+    font-size: 18px;
+    line-height: 23px;
+    text-align: left;
+}
+
+.carousel .slider .item .slide-content .link {
+    display: inline-block;
+    padding: 15px 35px;
+    font-family: 'Avenir LT W01_45 Book1475508';
+    text-transform: uppercase;
+    color: white;
+    font-size: 15px;
+    line-height: 16px;
+    text-align: center;
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+    background-color: #e72f42;
+}
+
+@media (min-width: 641px) {
+    .carousel .slider .item {
+        display: flex;
+        min-height: 500px;
+    }
+    .carousel .slider .item .slide-content,
+    .carousel .slider .item .img-cont {
+        width: 50%;
+    }
+    .carousel .slider .item .slide-content {
+        order: 1;
+    }
+    .carousel .slider .item .img-cont {
+        order: 2;
+    }
+    .carousel .slider .arrow-cont {
+        left: 55%;
+        padding-top: 0;
+        top: auto;
+        bottom: 35px;
+    }
+}
+
+@media (min-width: 1025px) {
+    .carousel {
+        margin: 0 auto 100px;
+    }
+    .carousel .slider .slick-list,
+    .carousel .slider .slick-track {
+        display: flex;
+    }
+    .carousel .slider .item {
+        height: 100%;
+    }
+    .carousel .slider .item .slide-content {
+        width: 33.3333%;
+        background: transparent;
+    }
+    .carousel .slider .item .slide-content .inner {
+        text-align: left;
+        height: 100%;
+        padding: 45px;
+        background: -moz-linear-gradient(to bottom left, rgba(226,226,226,0.3) 0%,rgba(255,255,255,0.6) 10%, rgba(255,255,255,1) 50%);
+        background: -webkit-linear-gradient(to bottom left, rgba(226,226,226,0.3) 0%,rgba(255,255,255,0.6) 10%, rgba(255,255,255,1) 50%);
+        background: linear-gradient(to bottom left, rgba(226,226,226,0.3) 0%,rgba(255,255,255,0.6) 10%, rgba(255,255,255,1) 50%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00e2e2e2', endColorstr='#00ffffff',GradientType=0 );
+    }
+    .carousel .slider .item .img-cont {
+        width: 66.6666%;
+        padding-bottom: 44%;
+    }
+    .carousel .slider .arrow-cont {
+        left: 37%;
+        bottom: 55px;
+    }
+    .carousel .slider .arrow-cont .custom-arrow {
+        width: 75px;
+        height: 75px;
+    }
+    .carousel .slider .arrow-cont .custom-arrow i {
+        font-size: 30px;
+    }
+    .carousel .slider .item .slide-content .date-block {
+        padding: 20px 15px 20px 45px;
+        font-size: 22px;
+        color: white;
+        background: -moz-linear-gradient(to left, rgba(182,182,182,0) 0%,rgba(182,182,182,0.75) 60%, rgba(182,182,182,1) 80%);
+        background: -webkit-linear-gradient(to left, rgba(182,182,182,0) 0%,rgba(182,182,182,0.75) 60%, rgba(182,182,182,1) 80%);
+        background: linear-gradient(to left, rgba(182,182,182,0) 0%,rgba(182,182,182,0.75) 60%, rgba(182,182,182,1) 80%);
+    }
+    .carousel .slider .item .slide-content h3 {
+        font-size: calc(26px + (36 - 26) * ((100vw - 1025px) / (1700 - 1025)));
+        line-height: calc(28px + (38 - 28) * ((100vw - 1025px) / (1700 - 1025)));
+    }
+    .carousel .slider .item .slide-content .author {
+        font-size: calc(18px + (26 - 18) * ((100vw - 1025px) / (1700 - 1025)));
+        line-height: calc(20px + (30 - 20) * ((100vw - 1025px) / (1700 - 1025)));
+    }
+    .carousel .slider .item .slide-content .desc {
+        font-size: calc(18px + (24 - 18) * ((100vw - 1025px) / (1700 - 1025)));
+        line-height: calc(23px + (34 - 23) * ((100 vw - 1025px) / (1700 - 1025)));
+    }
+    .carousel .slider .item .slide-content .link {
+        font-size: calc(15px + (20 - 15) * ((100vw - 1025px) / (1700 - 1025)));
+        padding: 32px 76px;
+    }
+    .carousel .title-cont h2 {
+        font-size: 82px;
+        line-height: 85px;
+    }
+}
+
+/* end carousel */
+
+.offers {
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto 50px;
+    padding: 0 15px;
+    text-align: center;
+}
+
+.offers .title-cont {
+    text-align: center;
+}
+
+.offers .title-cont h2 {
+    color: white;
+    margin: 0;
+    font-size: 30px;
+    line-height: 32px;
+}
+
+.offers .inner-panel {
+    display: flex;
+    flex-direction: column;
+}
+
+.offers .item {
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.offers .item .img-cont {
+    position: relative;
+}
+
+.offers .item .img-cont img {
+    display: block;
+    width: 100%;
+}
+
+.offers .item .img-cont .price-block {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 12px 24px;
+    text-align: center;
+    font-family:'Avenir LT W01_95 Black1475556'; 
+    font-size: 17px;
+    text-transform: uppercase;
+    color: white;
+    background-color: #d8262f;
+}
+
+.offers .item .item-content .inner {
+    border: 2px solid #444444;
+    border-bottom: 0;
+    padding: 25px 25px 35px;
+    background-color: black;
+}
+
+.offers .item .item-content .link {
+    display: block;
+    font-family:'Avenir LT W01_95 Black1475556';
+    padding: 20px;
+    background-color: white;
+    font-size: 26px;
+    text-transform: uppercase;
+    color: #6db1c7;
+    text-align: center;
+}
+
+.offers .item .item-content h3 {
+    font-size: 26px;
+    line-height: 28px;
+}
+
+.offers .view-more {
+    display: inline-block;
+    padding: 20px 40px;
+    background-color: #e72f42;
+    font-family:'Avenir LT W01_45 Book1475508';
+    font-size: 15px;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+@media (min-width: 641px) {
+    .offers { overflow: hidden; }
+    .offers .inner-panel {
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: 0 -3px;
+    }
+    .offers .item {
+        margin: 0 3px 6px;
+        width: calc(50% - 6px);
+    }
+}
+
+@media (min-width: 1025px) {
+    .offers {
+        margin: 0 auto 100px;
+    }
+    .offers .item {
+        width: calc(25% - 6px);
+    }
+    .offers .title-cont h2 {
+        font-size: 82px;
+        line-height: 85px;
+    }
+    .offers .view-more {
+        margin-top: 40px;
+        padding: 25px 60px;
+        font-size: 17px;
+    }
 }

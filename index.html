@@ -26,6 +26,10 @@
     <script type="text/javascript" src="js/foundation.equalizer.js"></script>
     <script type="text/javascript" src="js/jquery.onscreen.js"></script>
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.core.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.min.js"></script>
 
     <!-- CUSTOM FONTS CODE -->
     <script type="text/javascript" src="//fast.fonts.net/jsapi/78026310-fba5-4258-ad3f-d149e5a0fd04.js"></script>
@@ -215,7 +219,8 @@
             </div>
         </div><!-- tiles -->
         <div class="feat-slider">
-            <div class="img-slider">
+            <div class="img-slider scrollReveal-bottom"></div>
+            <div class="slider scrollReveal-top">
                 <div class="arrow-cont">
                     <div class="widget-title">
                         <h2>
@@ -224,11 +229,9 @@
                     </div>
                     <div class="arrows"></div>
                 </div>
-            </div>
-            <div class="slider">
                 <div class="item">
-                    <div class="img-cont">
-                        <img src="includes/public/assets/images/feat-slider.png" alt="">
+                    <div class="img-cont"
+                        style="background:url('includes/public/assets/images/feat-slider.png')center/cover no-repeat;">
                     </div>
                     <div class="slide-content">
                         <div class="date-cont">
@@ -265,8 +268,8 @@
                     </div>
                 </div>
                 <div class="item">
-                    <div class="img-cont">
-                        <img src="includes/public/assets/images/two-col-highlight.png" alt="">
+                    <div class="img-cont"
+                        style="background:url('includes/public/assets/images/two-col-highlight.png')center/cover no-repeat;">
                     </div>
                     <div class="slide-content">
                         <div class="date-cont">
@@ -303,9 +306,8 @@
                     </div>
                 </div>
                 <div class="item">
-                    <div class="img-cont">
-                        <img src="includes/public/assets/images/tile.png" alt="">
-                    </div>
+                    <div class="img-cont"
+                        style="background:url('includes/public/assets/images/tile.png')center/cover no-repeat;"></div>
                     <div class="slide-content">
                         <div class="date-cont">
                             <span>oct 31</span>
@@ -349,46 +351,281 @@
                     var imgSlider = root.find(".img-slider");
                     var arrows = root.find(".arrows");
 
-                    slider.on("init", function(){
-                        all.each(function(){
-                            var i = $(this).find("img").attr("src");
-                            var el = document.createElement("div");
-                            el.setAttribute("class", "item");
-                            el.style.backgroundImage = "url("+i+")";
-                            imgSlider.append(el)
-                        });
+                    slider.slick({
+                        infinite: true,
+                        arrows: true,
+                        dots: false,
+                        fade: false,
+                        speed: 400,
+                        slide: ".item",
+                        asNavFor: imgSlider,
+                        prevArrow: '<div class="custom-arrow prev"><div type="button" data-role="none" class="slick-prev" aria-label="previous"><i class="fas fa-angle-left"></i></div></div>',
+                        nextArrow: '<div class="custom-arrow next"><div type="button" data-role="none" class="slick-next" aria-label="next"><i class="fas fa-angle-right"></i></div></div>',
+                        appendArrows: arrows,
+                        responsive: [
+                            {
+                                breakpoint: 1024,
+                                settings: {
+                                    asNavFor: false,
+                                    fade: true,
+                                    speed: 1100
+                                }
+                            }
+                        ]
                     });
+
+                    function createSlider() {
+                        if (window.innerWidth > 1024) {
+                            var s = root.find(".img-slider");
+                            if (s.hasClass("loaded")) {
+                                return;
+                            } else {
+                                all.each(function () {
+                                    var i = $(this).find(".img-cont").css("background-image");
+                                    var t = $(this).find(".date-cont span").text();
+                                    var el = $("<div></div>");
+                                    el.addClass("item");
+                                    el.css("background-image", i);
+                                    var h2 = $("<h2></h2>");
+                                    h2.append(t);
+                                    el.append(h2);
+                                    imgSlider.append(el);
+                                    imgSlider.addClass("loaded");
+                                });
+                                imgSlider.slick({
+                                    asNavFor: slider,
+                                    infinite: true,
+                                    arrows: false,
+                                    fade: true,
+                                    speed: 1100,
+                                    slide: ".item"
+                                });
+                            }
+                        }
+                    }
+
+                    createSlider();
+
+                    $(window).on("resize orientationChange", _.debounce(function () {
+                        createSlider();
+                    }, 200));
+
+                });
+            </script>
+        </div><!-- featured slider -->
+        <div class="social-panel">
+            <style>
+                .social-panel {
+                    width: 100%;
+                    max-width: 1500px;
+                    padding: 0 15px;
+                    margin: 0 auto 25px;
+                    overflow: hidden;
+                }    
+                .social-panel .title-cont {
+                    margin-bottom: 25px;
+                }
+                .social-panel .title-cont .link {
+                    font-family:'Avenir LT W01_55 Roman1475520';
+                    font-size: 22px;
+                    color: white;
+                    text-align: center;
+                    display: block;
+                    text-transform: uppercase;
+                }
+                .social-panel .title-cont .link a {
+                    color: inherit;
+                    font-size: inherit;
+                }
+                .social-panel .inner-panel {
+                    background-color: white;
+                    padding: 1px;
+                }
+                .social-panel .load-more {
+                    padding: 10px;
+                    border: 1px solid #323232;
+                    width: 100%;
+                    margin: 10px auto 0;
+                    font-family:'Avenir LT W01_55 Roman1475520';
+                    font-size: 16px;
+                    text-transform: uppercase;
+                    color: white;
+                    background: black;
+                }
+                @media (min-width: 1025px) {
+                    .social-panel {
+                        margin: 0 auto 100px;
+                    }
+                    .social-panel .title-cont {
+                        margin-bottom: 0;
+                    }
+                    .social-panel .title-cont .link {
+                        font-family:'Avenir LT W01_85 Heavy1475544';
+                        font-size: 62px;
+                        line-height: 56px;
+                        text-align: left;
+                    }
+                    .social-panel .load-more {
+                        margin: 0;
+                        padding: 15px;
+                        border: none;
+                        cursor: pointer;
+                        transition: none;
+                    }
+                    .social-panel .load-more:hover {
+                        background: #333;
+                    }
+                }
+            </style>
+            <div class="title-cont scrollReveal-right">
+                <span class="link"><a href="/">#visitlackawannapa</a></span>
+            </div>
+            <div class="inner-panel">
+                <img style="display:block;width:100%;" class="show-for-small-only" src="includes/public/assets/images/stackla-sm.png" alt="">
+                <img style="display:block;width:100%;" class="hide-for-small-only" src="includes/public/assets/images/stackla.png" alt="">
+            </div>
+            <button class="load-more" type="button">load more</button>
+        </div><!-- social panel -->
+        <div class="carousel scrollReveal-left">
+            <div class="title-cont">
+                <h2>from our blog</h2>
+            </div>
+            <div class="slider">
+                <div class="arrow-cont"></div>
+                <div class="item">
+                    <div class="img-cont" style="background:url('includes/public/assets/images/carousel.png')center/cover no-repeat;"></div>
+                    <div class="slide-content">
+                        <div class="date-block">
+                            <span>november 27, 2018</span>
+                        </div>
+                        <div class="inner">
+                            <h3>nepa's open-air seasonal market is always a joy</h3>
+                            <h6 class="author">By JoAnne McAlister</h6>
+                            <p class="desc">
+                                The market success for over 75 years can be attributed to the fact that they are strictly a grow-your-own market, bringing fresh foods direct from the farms to you! When you... shop with them, you buy directly... 
+                            </p>
+                            <a href="/" class="link">read more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="img-cont" style="background:url('includes/public/assets/images/carousel.png')center/cover no-repeat;"></div>
+                    <div class="slide-content">
+                        <div class="date-block">
+                            <span>november 27, 2018</span>
+                        </div>
+                        <div class="inner">
+                            <h3>I am another slide item</h3>
+                            <h6 class="author">By Kurt Vonnegut</h6>
+                            <p class="desc">
+                                The market success for over 75 years can be attributed to the fact that they are strictly a grow-your-own market, bringing fresh foods direct from the farms to you! When you... shop with them, you buy directly... 
+                            </p>
+                            <a href="/" class="link">read more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script>
+                $(document).ready(function () {
+                    var root = $(".carousel");
+                    var slider = root.find(".slider");
+                    var arrows = root.find(".arrow-cont");
 
                     slider.slick({
                         infinite: true,
-                        arrows: false,
-                        dots: false,
-                        fade: true,
-                        speed: 1100,
-                        slide: ".item",
-                        asNavFor: imgSlider
-                    });
-
-                    imgSlider.slick({
-                        asNavFor: slider,
-                        infinite: true,
                         arrows: true,
+                        dots: false,
                         fade: true,
                         speed: 1100,
                         prevArrow: '<div class="custom-arrow prev"><div type="button" data-role="none" class="slick-prev" aria-label="previous"><i class="fas fa-angle-left"></i></div></div>',
                         nextArrow: '<div class="custom-arrow next"><div type="button" data-role="none" class="slick-next" aria-label="next"><i class="fas fa-angle-right"></i></div></div>',
                         appendArrows: arrows,
-                        speed: 400,
                         slide: ".item"
-                    })
-
+                    });
+        
                     $(window).on('resize orientationchange', function () {
                         slider.slick('resize');
                     });
-
+        
                 });
             </script>
-        </div><!-- featured slider -->
+        </div><!-- carousel -->
+        <div class="offers">
+            <div class="title-cont">
+                <h2>activities</h2>
+            </div>
+            <div class="inner-panel">
+                <div class="item">
+                    <div class="img-cont">
+                        <img src="includes/public/assets/images/booking.png" alt="">
+                        <div class="price-block">
+                            <span>from $999</span>
+                        </div>
+                    </div>
+                    <div class="item-content">
+                        <div class="inner">
+                            <h3>title of offer or deal here</h3>
+                            <div class="reviews-cont">
+                                <img src="includes/public/assets/images/yelp-stars.png" alt="">
+                            </div>
+                        </div>
+                        <a href="/" class="link">book now</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="img-cont">
+                        <img src="includes/public/assets/images/booking.png" alt="">
+                        <div class="price-block">
+                            <span>from $999</span>
+                        </div>
+                    </div>
+                    <div class="item-content">
+                        <div class="inner">
+                            <h3>title of offer or deal here</h3>
+                            <div class="reviews-cont">
+                                <img src="includes/public/assets/images/yelp-stars.png" alt="">
+                            </div>
+                        </div>
+                        <a href="/" class="link">book now</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="img-cont">
+                        <img src="includes/public/assets/images/booking.png" alt="">
+                        <div class="price-block">
+                            <span>from $999</span>
+                        </div>
+                    </div>
+                    <div class="item-content">
+                        <div class="inner">
+                            <h3>title of offer or deal here</h3>
+                            <div class="reviews-cont">
+                                <img src="includes/public/assets/images/yelp-stars.png" alt="">
+                            </div>
+                        </div>
+                        <a href="/" class="link">book now</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="img-cont">
+                        <img src="includes/public/assets/images/booking.png" alt="">
+                        <div class="price-block">
+                            <span>from $999</span>
+                        </div>
+                    </div>
+                    <div class="item-content">
+                        <div class="inner">
+                            <h3>title of offer or deal here</h3>
+                            <div class="reviews-cont">
+                                <img src="includes/public/assets/images/yelp-stars.png" alt="">
+                            </div>
+                        </div>
+                        <a href="/" class="link">book now</a>
+                    </div>
+                </div>
+            </div>
+            <a href="/" class="view-more">see more</a>
+        </div><!-- offers -->
     </section>
 
 
