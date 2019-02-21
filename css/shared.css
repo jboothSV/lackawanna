@@ -91,12 +91,65 @@ body {
     overflow-x: hidden;
 }
 
-@media(min-width: 1025px) {
+.mobile-stripes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-top: 180%;
+}
+
+.color-stripe.mobile {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.color-stripe.mobile.first {
+    width: 100%;
+    height: 20px;
+    bottom: 40px;
+}
+
+.color-stripe.mobile.second {
+    width: 100%;
+    height: 60px;
+    opacity: 0.3;
+}
+
+.right-to-left-mask {
+    -webkit-mask-image: linear-gradient(to left, transparent 5%, rgba(0,0,0,0.9) 85%);
+    mask-image: linear-gradient(to left, transparent 5%, rgba(0,0,0,0.9) 85%);
+}
+
+.mobile.right-to-left-mask {
+    -webkit-mask-image: linear-gradient(to left, transparent 5%, rgba(0,0,0,0.25) 85%);
+    mask-image: linear-gradient(to left, transparent 5%, rgba(0,0,0,0.25) 85%);
+}
+
+.color-stripe.down-right {
+    transform: skewY(15deg);
+}
+
+.color-stripe.blue {
+    background-color: rgba(109,177,199,1.0);
+}
+
+@media (min-width: 641px) {
+    .mobile-stripes {
+        padding-top: 60%;
+    }
+}
+
+@media (min-width: 1025px) {
     body {
         background-image: url("../includes/public/assets/images/bg-body.jpg");
         background-size: cover;
         background-repeat: repeat;
         background-position: center;
+    }
+    .mobile-stripes {
+        display: none;
     }
 }
 
@@ -125,6 +178,7 @@ h6 {
     text-transform: uppercase;
     font-family: "Avenir LT W01_95 Black1475556";
     color: white;
+    text-shadow: 0 1px 4px #000;
 }
 h1 {
     font-size: 23px;
@@ -162,6 +216,7 @@ p {
     font-size: 17px;
     line-height: 27px;
     margin-bottom: 20px;
+    text-shadow: 0 1px 4px #000;
 }
 @media (min-width: 641px) {
     h1 {
@@ -256,12 +311,14 @@ h6 > a {
 */
 
 .header-section {
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
     z-index: 999;
     height: 65px;
     width: 100%;
     margin: 0 auto;
-    background: linear-gradient(to right, #fafafa 0%, #434343 100%);
+    background: linear-gradient(to right, rgba(250,250,250,1) 0%, rgba(250,250,250,0.95) 60%, rgba(79,79,79,0.9) 95%, rgba(79,79,79,0.85) 100%);
 }
 
 .header-section .top-nav-cont {
@@ -331,9 +388,6 @@ h6 > a {
     .header-section {
         height: auto;
         background: none;
-        position: absolute;
-        top: 0;
-        left: 0;
     }
     .header-section .top-nav-cont {
         padding: 0;
@@ -344,7 +398,7 @@ h6 > a {
         align-items: center;
         justify-content: flex-end;
         padding: 0 20px;
-        background: linear-gradient(to left, rgba(0, 0, 0, 1) 0%, rgba(0,26,68, 0.7) 100%);
+        background: linear-gradient(to left, rgba(0, 0, 0, 1) 0%, rgba(0,26,68, 1) 100%);
     }
     .header-section .bottom-header {
         position: relative;
@@ -378,6 +432,61 @@ h6 > a {
     left: 0;    
     top: 0;
     width: 100%;
+    overflow: hidden;
+}
+
+.row {
+	max-width: 1150px;
+    margin: 0 auto;
+    margin-left: -15px;
+    margin-right: -15px;
+    width: inherit;
+}
+
+.panel-one-col {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px 15px;
+}
+
+.controlled-width {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.contentRender_name_plugins_core_textbox {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 15px 15px;
+}
+
+.panel-one-col .panel-one-col,
+.panel-one-col .contentRender_name_plugins_core_textbox {
+    padding: 0;
+}
+
+.intro-panel h1 {
+    font-size: 36px;
+    line-height: 34px;
+}
+
+.intro-panel p {
+    font-size: 18px;
+    line-height: 23px;
+}
+
+@media (min-width: 1025px) {
+    .intro-panel h1 {
+        font-size: 80px;
+        line-height: 80px;
+        margin: 0 0 40px;
+    }
+    .intro-panel p {
+        font-size: 28px;
+        line-height: 42px;
+    }
 }
 
 /*

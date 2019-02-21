@@ -267,7 +267,41 @@
 |-----------------------------------------------------------------------------------------------------------
 */
 
+.interior-nav {
+    margin: 0 0 20px;
+    text-align: left;
+}
 
+.interior-nav li {
+    position: relative;
+    display: inline-block;
+}
+
+.interior-nav li::after {
+    content: "/";
+    color: #377295;
+    margin: 0 8px;
+}
+
+.interior-nav li a {
+    font-family:'Avenir LT W01_55 Roman1475520';
+    font-size: 16px;
+    color: white;
+    text-transform: uppercase;
+}
+
+.interior-nav li:last-child::after {
+    display: none;
+}
+
+.interior-nav li:last-child a {
+    font-family:'Avenir LT W01_95 Black1475556';
+}
+
+@media (min-width: 1025px) {
+    .interior-nav { margin: 0; }
+    .interior-nav li a { font-size: 17px; }
+}
 
 /*
 |-----------------------------------------------------------------------------------------------------------

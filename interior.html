@@ -7,8 +7,8 @@
     <link rel="icon" href="/includes/public/assets/images/favicon.ico" type="image/x-icon" />
     <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.22/themes/smoothness/jquery-ui.css" rel="stylesheet" />
     <link href="css/foundation.min.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.5.8/slick.css"/>
+    <link href="css/font-awesome.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" />
     <link href="css/shared.css" rel="stylesheet" type="text/css" />
     <link href="css/search.css" rel="stylesheet" type="text/css" />
     <link href="css/slideshow-int.css" rel="stylesheet" type="text/css" />
@@ -18,6 +18,7 @@
     <link href="css/shared-form.css" rel="stylesheet" type="text/css" />
     <link href="css/booking.css" rel="stylesheet" type="text/css" />
     <link href="css/add-this.css" rel="stylesheet" type="text/css" />
+    <link href="css/vguide-enews.css" rel="stylesheet" type="text/css" />
 
     <script src="http://code.jquery.com/jquery-1.8.1.min.js"></script>
     <script src="//code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
@@ -25,8 +26,7 @@
     <script type="text/javascript"  src="js/foundation.reveal.js"></script>
     <script type="text/javascript" src="js/foundation.equalizer.js"></script>
     <script type="text/javascript" src="js/jquery.onscreen.js"></script>
-
-    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.5.8/slick.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 
     <!-- CUSTOM FONTS CODE -->
     <script type="text/javascript" src="//fast.fonts.net/jsapi/78026310-fba5-4258-ad3f-d149e5a0fd04.js"></script>
@@ -34,113 +34,283 @@
 </head>
 
 <body>
-
+    <div class="mobile-stripes">
+        <div class="color-stripe down-right blue right-to-left-mask first mobile"></div>
+        <div class="color-stripe down-right blue right-to-left-mask second mobile"></div>
+    </div>
     <!-- ///// HEADER INCLUDE ///// -->
     <div w3-include-html="header.html"></div>
 
     <!-- ////// HEADER SLIDESHOW //////// -->
     <section class="header-slideshow-int">
-        <div class="imgcont">
-            <img src="includes/public/assets/images/interior-header.jpg" />
-        </div>      
+        <div class="item">
+            <div class="img-cont" style="background:url('includes/public/assets/images/int-slide.png')center/cover no-repeat;"></div>
+            <div class="item-content scrollReveal-top">
+                <h2>montage mountain ski resort &amp; water park</h2>
+                <p class="desc">
+                    Conveniently located in Northeast Pennsylvania’s scenic Pocono Mountain Region. The 400 acre resort doubles as a skier’s paradise by winter and warm-weather fun zone by summer. <a href="/">Read More</a>
+                </p>
+            </div>
+        </div>   
+        <div class="add-this-panel scrollReveal-right">
+            <ul class="interior-nav">
+                <li>
+                    <a href="/">maps &amp; info</a>
+                </li>
+                <li>
+                    <a href="/">visitors guide</a>
+                </li>
+                <li>
+                    <a href="/">winter guide</a>
+                </li>
+            </ul>
+            <a href="/" class="add-this">
+                share
+                <i class="fas fa-share-alt"></i>
+            </a>
+        </div>  
     </section>
 
     <!-- //////  BODY  //////// -->
     <section class="content">
-        <h1>This is an example of some text that is surrounded by an H1 tag.</h1>
+        <div class="panel-one-col scrollReveal-right">
+            <div class="intro-panel"><!-- larger h1 and p tags -->
+                <div class="contentRender_name_plugins_core_textbox">
+                    <h1>Where You Wanna Winter</h1>
+                    <p>
+                        When our blue sky turns to white and the first snowflake touches the tip of your nose, you know the winter season has hit Northeastern Pennsylvania. Cold hands throw that first snowball and warm hearts cozy up with loved ones as the anticipation builds for all that our winter season offers. Montage Mountain is packed with powder. Grab your friends, grab your board, and shred! Or strap on your skis and tackle the downhills. Just minutes from downtown Scranton, Montage offers everything from bunny hills to expert courses, so bring the whole family. When you’re ready for a break, kick your feet up in the lodge, enjoy a cup of cocoa or a craft brew and warm-up beside the fireplace.
+                    </p>
+                </div>
+            </div>
+        </div><!-- panel one col -->
+        <div class="split-panel img-left img-large scrollReveal-right">
+            <div class="inner-panel">
+                <div class="img-container">
+                    <div class="img-box">
+                        <img src="includes/public/assets/images/split-lg.png" alt="">
+                    </div>
+                </div>
+                <div class="text-container">
+                    <div class="inner">
+                        <h2 class="title">wanna get cozy?</h2>
+                        <p class="desc">
+                            Montage Mountain Ski Resort and Waterpark is conveniently located in Northeast Pennsylvania’s scenic Pocono Mountain Region. The 400 acre resort doubles as a skier’s paradise by winter and warm-weather fun zone by summer. The winter features 27 fully groomed ski slopes, the longest snow tubing lanes in PA, 2 terrain parks, 7 lifts, and is 1 of 7 ski resorts in the country, and the only in PA, to offer Airboarding! With ski terrain ranging in difficulty from beginner to double black diamond, including the 2nd steepest slope on the east coast, “White Lightning,” Montage Mountain is a must-visit in NEPA. Montage Mountain's summer features include a giant wave pool, Lazy River, and ZipRider, and is the perfect destination for excitement-seekers.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div><!-- split panel -->
+        <div class="split-panel img-right img-small scrollReveal-right">
+            <div class="inner-panel">
+                <div class="img-container">
+                    <div class="img-box">
+                        <img src="includes/public/assets/images/split-sm.png" alt="">
+                    </div>
+                    <div class="img-box">
+                        <img src="includes/public/assets/images/split-sm.png" alt="">
+                    </div>
+                </div>
+                <div class="text-container">
+                    <div class="inner">
+                        <h2 class="title">Elk Mountain Ski Resort</h2>
+                        <p class="desc">
+                            Elk Mountain Ski Resort is a 'hidden gem' in the Endless Mountains on the summit of North Knob near Union Dale, PA. It is located just 30 miles north of Scranton. The mountain receives an average of five feet of natural snow per season, but snowmaking covers 100-percent (180 acres) of the terrain. Elk Mountain boasts approx 1,000 feet of vertical excitement, and their 7 lifts (5 doubles, 1 quad, and 1 cable tow in the terrain park) give access to 27 slopes that include 2 terrain parks and 11 black diamond trails for skiers and snowboarders--offering some of the most challenging skiing in the region. Warm up or recharge at the day lodge, restaurant, and snack bar! Learn to ski at Elk's ski school. Stop into their ski and snowboard shop for some gear, which also offers equipment rentals.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div><!-- split panel -->
+        <div class="pull-quote scrollReveal-left">
+            <div class="img-cont" style="background:url('includes/public/assets/images/quote.png')center/cover no-repeat;"></div>
+            <p class="quote">
+                With ski terrain ranging in difficulty from beginner to double black diamond, including the 2nd steepest slope on the east coast, “White Lightning,” Montage Mountain is a must-visit in NEPA.” 
+            </p>
+            <span class="credit">
+                sandy strickland
+            </span>
+        </div><!-- pull quote -->
+        <div class="carousel alternate scrollReveal-left">
+            <div class="title-cont">
+                <h2>insider tips</h2>
+            </div>
+            <div class="slider">
+                <div class="arrow-cont"></div>
+                <div class="item">
+                    <div class="img-cont" style="background:url('includes/public/assets/images/carousel.png')center/cover no-repeat;"></div>
+                    <div class="slide-content">
+                        <div class="inner">
+                            <h3>a winter holiday party at montage mountain</h3>
+                            <p class="desc">
+                                The market success for over 75 years can be attributed to the fact that they are strictly a grow-your-own market, bringing fresh foods direct from the farms to you! When you... shop with them, you buy directly... 
+                            </p>
+                            <a href="/" class="link">learn more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="img-cont" style="background:url('includes/public/assets/images/carousel.png')center/cover no-repeat;"></div>
+                    <div class="slide-content">
+                        <div class="inner">
+                            <h3>I am another slide item</h3>
+                            <p class="desc">
+                                The market success for over 75 years can be attributed to the fact that they are strictly a grow-your-own market, bringing fresh foods direct from the farms to you! When you... shop with them, you buy directly... 
+                            </p>
+                            <a href="/" class="link">learn more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script>
+                $(document).ready(function () {
+                    var root = $(".carousel");
+                    var slider = root.find(".slider");
+                    var arrows = root.find(".arrow-cont");
 
-        <p>Search engines look for H1s to determine a page&#39;s title and use that in the weighting of the page in their rankings. Consequently, you never want to actually use the H1 in the content of a page because we automatically generate the H1 from the Page Name and Google would ding you for trying to game their algorithm if you had more than one on a page.</p>
-
-        <h2>This is an example of an H2</h2>
-
-        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu</p>
-
-        <h3>This is an example of an H3</h3>
-
-        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu</p>
-
-        <h4>This is an example of an H4</h4>
-
-        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu</p>
-
-        <h5>This is an example of an H5</h5>
-
-        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu</p>
-
-        <h6>This is an example of an H6</h6>
-
-        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu</p>
-
-        <p>This is what a bunch of text looks like without the &quot;p tag&quot;. If you were to look at the HTML version of this page, you would notice that this grouping of text does not have any sort of tag (denoted by &lt;&gt; preceding it and following it to close the tag). That is why this text is pretty generic and lacking any style. Chances are that the leading between the lines is a lot closer than the ideal as well.</p>
-
-        <p>This, on the other hand is what text looks like when it is surrounded by &quot;p tags&quot;. In case it is not apparent at this point, &quot;p&quot; stands for paragraph. It is the p tags that alert the CMS to the fact that this text needs to have certain styling applied to it. That is why this text probably looks a good deal different than the paragraph above. If you were to look at this text in the HTML, you would see a</p>
-
-        <p>just before the first word to open the tag and a just after this sentence to close it.</p>
-
-        <p>And now for some lists...we&#39;ll start with bullets</p>
-
-        <ul>
-            <li>First bullet</li>
-            <li>Second bullet</li>
-            <li>Third bullet
-            <ul>
-                <li>Indented bullet
-                <ul>
-                    <li>Twice indented bullet</li>
-                </ul>
-                </li>
-            </ul>
-            </li>
-        </ul>
-
-        <p>Or if you prefer an ordered lis, as opposed to an unorded bullet list:</p>
-
-        <ol>
-            <li>First item</li>
-            <li>Second item</li>
-            <li>Third item
-            <ol>
-                <li>Once indented
-                <ol>
-                    <li>Twice indented</li>
-                </ol>
-                </li>
-            </ol>
-            </li>
-        </ol>
-
-        <p>And finally, we&#39;ll wrap this page up with some common text styling:</p>
-
-        <p><b>Here&#39;s an example of what bold text looks like</b></p>
-
-        <p><i>And here&#39;s italicized text</i></p>
-
-        <p><u>How about some underlining?</u></p>
-
-        <p><strike>I can&#39;t imagine why you&#39;d use strikethrough on a website, but here you go.</strike></p>
-
-        <p>Here&#39;s and example of <sub>subscript</sub></p>
-
-        <p>Or how about some <sup>superscript</sup>?</p>
-
-        <p>And last but certainly not least, here&#39;s what a <a href="http://www.google.com" target="_blank">hyperlink</a> looks like on this site.</p>
-
-        <table border="1" cellpadding="1" cellspacing="1">
-            <tbody>
-                <tr>
-                    <td>odd - 1</td>
-                    <td>odd - 2</td>
-                </tr>
-                <tr>
-                    <td>even - 1</td>
-                    <td>even - 2</td>
-                </tr>
-                <tr>
-                    <td>odd - 3</td>
-                    <td>odd - 4</td>
-                </tr>
-            </tbody>
-        </table>
+                    slider.slick({
+                        infinite: true,
+                        arrows: true,
+                        dots: false,
+                        fade: true,
+                        speed: 1100,
+                        prevArrow: '<div class="custom-arrow prev"><div type="button" data-role="none" class="slick-prev" aria-label="previous"><i class="fas fa-angle-left"></i></div></div>',
+                        nextArrow: '<div class="custom-arrow next"><div type="button" data-role="none" class="slick-next" aria-label="next"><i class="fas fa-angle-right"></i></div></div>',
+                        appendArrows: arrows,
+                        slide: ".item"
+                    });
+        
+                    $(window).on('resize orientationchange', function () {
+                        slider.slick('resize');
+                    });
+        
+                });
+            </script>
+        </div><!-- carousel -->
+        <div class="tiles">
+            <div class="title-cont">
+                <h2>more to explore</h2>
+            </div>
+            <div class="inner-panel">
+                <div class="tile">
+                    <a href="/">
+                        <div class="img-cont" style="background:url('includes/public/assets/images/tile.png')center/cover no-repeat;">
+                        </div>
+                        <div class="title-cont">
+                            <h3>
+                                <span class="title1">Lackawanna river</span>
+                                <span class="title2">heritage trail</span>
+                            </h3>
+                        </div>
+                    </a>
+                </div>
+                <div class="tile">
+                    <a href="/">
+                        <div class="img-cont" style="background:url('includes/public/assets/images/tile.png')center/cover no-repeat;">
+                        </div>
+                        <div class="title-cont">
+                            <h3>
+                                <span class="title1">Lackawanna river</span>
+                                <span class="title2">heritage trail</span>
+                            </h3>
+                        </div>
+                    </a>
+                </div>
+                <div class="tile">
+                    <a href="/">
+                        <div class="img-cont" style="background:url('includes/public/assets/images/tile.png')center/cover no-repeat;">
+                        </div>
+                        <div class="title-cont">
+                            <h3>
+                                <span class="title1">Lackawanna river</span>
+                                <span class="title2">heritage trail</span>
+                            </h3>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div><!-- tiles -->
+        <div class="imagebox-panel">
+            <div class="imagebox">
+                <a href="/">
+                    <img src="includes/public/assets/images/imagebox.png" alt="">
+                </a>
+                <div class="slide-content">
+                    <div class="inner">
+                        <h3>steamtown national historic</h3>
+                        <p class="desc">
+                            Kick off winter at Montage Mountain at their annual Holiday Party.  Enjoy live music and complimentary food and cocktails inside the lodge on Wednesday, December 5th. The event will run from 5pm-10pm.
+                        </p>
+                    </div>
+                    <a href="/" class="see-more"><i class="fas fa-angle-right"></i></a>
+                </div>
+            </div>
+            <div class="imagebox">
+                <a href="/">
+                    <img src="includes/public/assets/images/imagebox.png" alt="">
+                </a>
+                <div class="slide-content">
+                    <div class="inner">
+                        <h3>steamtown national historic</h3>
+                        <p class="desc">
+                            Kick off winter at Montage Mountain at their annual Holiday Party.  Enjoy live music and complimentary food and cocktails inside the lodge on Wednesday, December 5th. The event will run from 5pm-10pm.
+                        </p>
+                    </div>
+                    <a href="/" class="see-more"><i class="fas fa-angle-right"></i></a>
+                </div>
+            </div>
+        </div><!-- imagebox panel -->
+        <div class="spotlight-panel">
+            <div class="title-cont">
+                <h2>attractions</h2>
+            </div>
+            <div class="inner-panel">
+                <div class="spotlight">
+                   <a href="/" class="img-link">
+                        <div class="img-cont" style="background:url('includes/public/assets/images/spotlight.png')center/cover no-repeat;"></div>
+                    </a>
+                    <div class="slide-content">
+                        <h3>slocum hollow bar &amp; restaurant</h3>
+                        <p class="desc">
+                            It recently underwent a $3 million renovation to include a food court, new Slocum Hollow Bar &amp Restaurant and even space.
+                        </p>
+                        <a class="see-more" href="/">more</a>
+                    </div>
+                </div>
+                <div class="spotlight">
+                    <a href="/" class="img-link">
+                        <div class="img-cont" style="background:url('includes/public/assets/images/spotlight.png')center/cover no-repeat;"></div>
+                    </a>
+                    <div class="slide-content">
+                        <h3>slocum hollow bar &amp; restaurant</h3>
+                        <p class="desc">
+                            It recently underwent a $3 million renovation to include a food court, new Slocum Hollow Bar &amp Restaurant and even space.
+                        </p>
+                        <a class="see-more" href="/">more</a>
+                    </div>
+                </div>
+                <div class="spotlight">
+                    <div class="img-cont" style="background:url('includes/public/assets/images/spotlight.png')center/cover no-repeat;"></div>
+                    <div class="slide-content">
+                        <h3>slocum hollow bar &amp; restaurant</h3>
+                        <p class="desc">
+                            It recently underwent a $3 million renovation to include a food court, new Slocum Hollow Bar &amp Restaurant and even space.
+                        </p>
+                        <a class="see-more" href="/">more</a>
+                    </div>
+                </div>
+                <div class="spotlight">
+                    <a href="/" class="img-link">
+                        <div class="img-cont" style="background:url('includes/public/assets/images/spotlight.png')center/cover no-repeat;"></div>
+                    </a>
+                    <div class="slide-content">
+                        <h3>slocum hollow bar &amp; restaurant</h3>
+                        <p class="desc">
+                            It recently underwent a $3 million renovation to include a food court, new Slocum Hollow Bar &amp Restaurant and even space.
+                        </p>
+                        <a class="see-more" href="/">more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
     
     <!-- /////  FOOTER INCLUDE  ////// -->
@@ -152,53 +322,22 @@
 
 <script type="text/javascript" src="js/nav.js"></script>
 
+<script src="https://unpkg.com/scrollreveal@4"></script>
 <script>
-    var root = $('[data-guid="{{guid}}"]');
-    $(document).foundation();                
-    
-    var interiorNav = $('[data-guid="interior-nav"]');
-    var toggle = interiorNav.find('.toggle');
-    var menu = interiorNav.find('.menu');
-    var submenuButtons = interiorNav.find('.open-submenu');
-    toggle.click(function() {
-        menu.slideToggle();
-        return false;
-    });
-    submenuButtons.click(function() {
-        var button = $(this);
-        var submenu = button.next('ul');
-        button.toggleClass('open');
-        submenu.slideToggle(function() {
-            submenu.toggleClass('open');
-        });
-        return false;
-    });                                             
+
+    ScrollReveal().reveal('.scrollReveal-right', { duration: 1750, reset: true, distance: "160px", origin: "right", mobile: false });
+    ScrollReveal().reveal('.scrollReveal-left', { duration: 1750, reset: true, distance: "160px", origin: "left", mobile: false });
+    ScrollReveal().reveal('.scrollReveal-bottom', { duration: 1750, reset: true, distance: "160px", origin: "bottom", mobile: false });
+    ScrollReveal().reveal('.scrollReveal-top', { duration: 1750, reset: true, distance: "160px", origin: "top", mobile: false });
+
 </script>
 
 <script type="text/javascript">
-
-    //Weather 
-
-    $('body').on('click', '[data-sv-weathercont]', function() {
-        $('[data-sv-weatherdd]').toggleClass('active');
-        $('[data-sv-weathercont]').toggleClass('active');
+    $(document).ready(function () {
+        $("body").on("click", "[data-toggle-primarysearch]", function () {
+            $(this).parent().toggleClass("active");
+        });
     });
-
-    //Search specific 
-
-     $('body').on('click', '[data-sv-sitesearch-icon]', function() {
-        $('[data-sv-sitesearchdd]').toggleClass('active');
-    });
-     $('body').on('click','[data-sv-sitesearchdd]', function() {
-        $(this).toggleClass('active');
-    });
-     $('body').on('click','[data-sv-sitesearchmobile]', function() {
-        $('[data-sv-sitesearchddmobile]').toggleClass('active');
-    });
-     $('body').on('click','[data-sv-searchclosemobile]', function() {
-        $('[data-sv-sitesearchddmobile]').toggleClass('active');
-    });
-    
 </script>
 
 </body>
