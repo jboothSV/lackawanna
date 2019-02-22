@@ -24,6 +24,29 @@
     color: white;
 }
 
+.shared-detail .add-this-panel {
+    position: relative;
+    top: 0;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+@media (min-width: 750px) {
+    .shared-detail .add-this-panel {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        left: 0;
+    }
+    .shared-detail .add-this-panel .add-this {
+        order: 1;
+        margin-bottom: 30px;
+    }
+    .shared-detail .add-this-panel .back-button {
+        order: 2;
+    }
+}
+
 @media (min-width: 1025px) {
     .add-this-panel {
         bottom: 0;
@@ -43,5 +66,8 @@
     }
     .add-this-panel .interior-nav {
         order: 2;
+    }
+    .shared-detail .add-this-panel {
+        margin-bottom: 70px;
     }
 }

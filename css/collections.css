@@ -1219,6 +1219,9 @@
 
 .spotlight-panel {
     padding: 0 15px;
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
 }
 
 .spotlight-panel .title-cont {
@@ -1275,6 +1278,7 @@
     padding: 10px;
     text-align: center;
     width: 50%;
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 .spotlight .slide-content .desc {
@@ -1291,4 +1295,32 @@
     font-family:'Avenir LT W01_95 Black1475556';
     color: #d92c3e;
     text-transform: uppercase;
+}
+
+@media (min-width: 641px) {
+    .spotlight {
+        width: 50%;
+    }
+}
+
+@media (min-width: 1025px) {
+    .spotlight .slide-content .desc {
+        display: block;
+        font-size: 17px;
+        line-height: 23px;
+    }
+    .spotlight .slide-content {
+        padding: calc(10px + (30 - 10) * ((100vw - 1025px) / (1700 - 1025)));
+    }
+    .spotlight .slide-content h3 {
+        font-size: calc(18px + (36 - 18) * ((100vw - 1025px) / (1700 - 1025)));
+        line-height: calc(20px + (38 - 20) * ((100vw - 1025px) / (1700 - 1025)));
+    }
+    .spotlight .slide-content .see-more {
+        font-size: calc(16px + (26 - 16) * ((100vw - 1025px) / (1700 - 1025)));
+    }
+    .spotlight-panel .title-cont h2 {
+        font-size: 86px;
+        line-height: 88px;
+    }
 }

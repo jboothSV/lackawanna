@@ -118,7 +118,8 @@
     border-radius:50%;  
     vertical-align: top;
 }
-.header-slideshow ul.slick-dots li.slick-active button { background-color: transparent !important; 
+.header-slideshow ul.slick-dots li.slick-active button { 
+    background-color: transparent !important; 
 }
 
 @media (min-width: 641px) {
